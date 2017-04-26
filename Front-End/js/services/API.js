@@ -13,10 +13,11 @@
                     });
                 },
 
-                postBlogs: () => {
+                postBlogs: (data) => {
                     return $http({
                         method: 'POST',
                         url: 'http://localhost:8080/blog',
+                        data: data,
                     })
                 },
 

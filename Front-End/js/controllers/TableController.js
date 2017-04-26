@@ -6,16 +6,22 @@
         .controller('TableController', function(API) {
 
         	const vm = this;
-            let data = API.getBlogs(); //This is how we get our Data from the API
+           
+
+            //This is how we get our Data from the API
+
+            let data = API.getBlogs(); 
             data.then(res => {
                 console.log(res);
                 vm.data = res.data
             });
 
+            // Posting a Blog
+
             vm.submitBlog = ((isValid)=> {
                 if (isValid) {
 
-                    const newItem = Object.assign({}, vm.item);
+                    const newItem = Object.assign({}, vm.data);
                     let data = API.postBlogs(newItem); //this is linked to saveData that saves newItem and that 'data' is then updated below
                     data.then(res => {
                         let getNew = API.getBlogs(); //this is telling the API to run the updated Data and return that Data
@@ -24,7 +30,7 @@
                             vm.data = res.data 
                         })
                     });
-                    vm.item = {};
+                    vm.data = {};
                     swal(
                         "Good job!",
                         "You Added an Item!",

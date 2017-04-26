@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 topHeader">
+            <div class="col-md-12 blogDescription">
+                <h1 style="color: #42B6F3">thoughts on coding, <br>tech products, and workflow tips</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mainBody">
+        <div class="row">
+        <div class="col-md-8 col-md-offset-2 ">
+            <div class="col-md-12 blogPosts" ng-repeat="data in vm.data">
+                <h2 style="color: black"><b>{{data.title}}</b></h2>
+                <p>{{data.content | limitTo: 300}}{{data.content.length > 300 ? '...' : ''}}</p>
+                <button type="submit" class="btn btn-default">Read More</button>
+            </div>
+            </div>
+    </div>
+</div>

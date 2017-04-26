@@ -7,7 +7,7 @@ const userSchema = new Schema({
 
 	title: String,
 	content: String,
-	author: {Schema.Types.ObjectID, ref: 'Author'}
+	author: {type:Schema.Types.ObjectId, ref: 'Author'}
 
 });
 

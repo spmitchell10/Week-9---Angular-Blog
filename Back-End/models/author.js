@@ -7,7 +7,7 @@ const userSchema = new Schema({
 
 	firstName: String,
 	lastName: String,
-	blogs: [{Schema.Types.ObjectID, ref: 'Blog'}]
+	blogs: [{type:Schema.Types.ObjectId, ref: 'Blog'}]
 
 });
 
