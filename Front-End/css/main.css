@@ -36,6 +36,10 @@ body {
   .blogPosts h2 {
     margin-bottom: 35px;
     margin-top: 20px; }
+  .blogPosts p blockquote {
+    color: #42B6F3; }
+  .blogPosts p h4 {
+    color: black; }
 
 .btn-default {
   border-radius: 15px;
