@@ -34,7 +34,7 @@
 
                 $stateProvider
                 .state('singleBlog', {
-                    url: '/blog',
+                    url: '/blog/:id',
                     views: {
                         'content': {
                             templateUrl: '../partials/singleblog.html',

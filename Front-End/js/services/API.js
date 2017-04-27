@@ -24,8 +24,8 @@
                 getSingleBlog: (id) => {
                     return $http({
                         method: 'GET',
-                        url: 'http://localhost:8080/blog/${id}',
-                        data: {blogid: data},
+                        url: `http://localhost:8080/blog/${id}`,
+                        
                     })
                 },
 

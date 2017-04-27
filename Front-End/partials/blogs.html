@@ -15,7 +15,7 @@
             	<h5>{{data.date | date: shortdate}}</h5>
                 <h2 style="color: black"><b>{{data.title}}</b></h2>
                 <p ng-bind-html="data.content | limitTo: 300"></p>
-                <button type="submit" class="btn btn-default" ng-Click="vm.singleBlog(blog._id)" ui-sref='singleBlog'>Read More</button>
+                <button type="submit" class="btn btn-default" ng-Click="vm.singleBlog(blog._id)" ui-sref='singleBlog({id: data._id})'>Read More</button>
             </div>
             </div>
     </div>

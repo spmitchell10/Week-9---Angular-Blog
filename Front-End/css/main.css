@@ -49,6 +49,6 @@ body {
   outline: none;
   background: white; }
 
-.btn-default:active {
+.btn-default:active:focus {
   outline: none;
   background: white; }

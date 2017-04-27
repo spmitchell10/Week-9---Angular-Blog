@@ -1,12 +1,12 @@
 <div class="container mainBody">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 ">
-            <div class="col-md-12 blogPosts" ng-repeat="data in vm.data">
+            <div class="col-md-12 blogPosts">
 
-                <h2 style="color: black"><b>{{data.title}}</b></h2>
-                <p ng-bind-html="data.content"></p>
+                <h2 style="color: black"><b>{{vm.currentBlog.title}}</b></h2>
+                <p ng-bind-html="vm.currentBlog.content"></p>
                 <div class="date">
-                <h5>{{data.date | date: shortdate}}</h5>
+                <h5>{{vm.currentBlog.date | date: shortdate}}</h5>
                 </div>
             </div>
         </div>

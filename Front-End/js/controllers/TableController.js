@@ -3,18 +3,17 @@
 
     angular
         .module('blog')
-        .controller('TableController', function(API,$sce) {
+        .controller('TableController', function(API, $sce) {
 
-        	const vm = this;
+            const vm = this;
 
-            vm.delibertlyTrustDangerousSnippet = function(){
+            vm.delibertlyTrustDangerousSnippet = function() {
                 return $sce.trustAsHtml(vm)
             }
 
-
             //This is how we get our Data from the API
 
-            let data = API.getBlogs(); 
+            let data = API.getBlogs();
             data.then(res => {
                 console.log(res);
                 vm.data = res.data
@@ -22,7 +21,7 @@
 
             // Posting a Blog
 
-            vm.submitBlog = ((isValid)=> {
+            vm.submitBlog = ((isValid) => {
                 if (isValid) {
 
                     const newItem = Object.assign({}, vm.data);
@@ -31,7 +30,7 @@
                         let getNew = API.getBlogs(); //this is telling the API to run the updated Data and return that Data
                         getNew.then(res => { //This is displaying the new Data from the API that is sent over
                             console.log("NEW", res); //You can also do this on the backend by re-running the post after the save or delete
-                            vm.data = res.data 
+                            vm.data = res.data
                         })
                     });
                     vm.data = {};
@@ -39,18 +38,21 @@
                         "Good job!",
                         "You Added an Item!",
                         "success");
-                    } else {
+                } else {
                     swal({
-                      title: "Uh, oh!",
-                      text: "You must fill out all fields!",
-                      type: "warning",
-                      confirmButtonColor: "#DD6B55",
-                      confirmButtonText: "Let's do this!",
-                      closeOnConfirm: false});
+                        title: "Uh, oh!",
+                        text: "You must fill out all fields!",
+                        type: "warning",
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Let's do this!",
+                        closeOnConfirm: false
+                    });
                 }
 
             })
 
         });
-     
+
 })();
+
+
