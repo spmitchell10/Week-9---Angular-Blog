@@ -3,10 +3,14 @@
 
     angular
         .module('blog')
-        .controller('TableController', function(API) {
+        .controller('TableController', function(API,$sce) {
 
         	const vm = this;
-           
+
+            vm.delibertlyTrustDangerousSnippet = function(){
+                return $sce.trustAsHtml(vm)
+            }
+
 
             //This is how we get our Data from the API
 

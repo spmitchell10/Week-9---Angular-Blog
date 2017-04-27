@@ -7,6 +7,7 @@ const userSchema = new Schema({
 
 	title: String,
 	content: String,
+	date: {type: Date, default: Date.now},
 	author: {type:Schema.Types.ObjectId, ref: 'Author'}
 
 });

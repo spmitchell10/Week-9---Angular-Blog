@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('blog', ['ui.router'])
+        .module('blog', ['ui.router','ngSanitize'])
         .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
 
@@ -26,6 +26,19 @@
                         'content': {
                             templateUrl: '../partials/admin.html',
                             controller: 'TableController',
+                            controllerAs: 'vm',
+                        },
+
+                    }
+                })
+
+                $stateProvider
+                .state('singleBlog', {
+                    url: '/blog',
+                    views: {
+                        'content': {
+                            templateUrl: '../partials/singleblog.html',
+                            controller: 'singleBlogController',
                             controllerAs: 'vm',
                         },
 

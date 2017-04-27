@@ -10,6 +10,9 @@ body {
   .thinLine .floatRight > h4 {
     float: right; }
 
+.date {
+  padding-top: 10px; }
+
 .topHeader {
   margin-top: 50px; }
 
@@ -37,3 +40,15 @@ body {
 .btn-default {
   border-radius: 15px;
   margin-top: 5px; }
+
+.btn-default:hover {
+  color: #42B6F3;
+  background: white; }
+
+.btn-default:focus {
+  outline: none;
+  background: white; }
+
+.btn-default:active {
+  outline: none;
+  background: white; }
