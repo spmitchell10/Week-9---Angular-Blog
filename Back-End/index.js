@@ -49,11 +49,10 @@ app.get('/createAuthor', function(req, res) {
 app.get('/blog/:id', function(req, res) {
     let id = req.params.id //this sets the paramaters for searching for a specific entry by id
 
-    let newBlog = data.filter(user => { //'.filter' filters through until we find the right id that mateches the id we are searching for 
-        if (user.id == id) //this is just saying that if the id is the id you're looking for return the id
-            return true;
+    Blog.findOne({_id:id}).populate('author').exec(function(err, Blogs) { //this finds and returns all of the blogs with that ID in the DB
+        if (err) return console.error(err);
+        res.json(Blogs)
     })
-    res.json(newBLog)
 });
 
 

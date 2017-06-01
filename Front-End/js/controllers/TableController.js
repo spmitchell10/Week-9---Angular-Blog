@@ -5,6 +5,10 @@
         .module('blog')
         .controller('TableController', function(API, $sce) {
 
+
+            var suffix = '...';
+
+
             const vm = this;
 
             vm.delibertlyTrustDangerousSnippet = function() {
@@ -24,6 +28,7 @@
             vm.submitBlog = ((isValid) => {
                 if (isValid) {
 
+                    vm.suffix = '...';
                     const newItem = Object.assign({}, vm.data);
                     let data = API.postBlogs(newItem); //this is linked to saveData that saves newItem and that 'data' is then updated below
                     data.then(res => {
